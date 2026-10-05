@@ -1,4 +1,4 @@
-/*import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCode;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -15,33 +15,31 @@ public class Main extends Frame {
         @Override
         public void keyTyped(KeyEvent e) {
         }
+
         @Override
         public void keyPressed(KeyEvent e) {
-            if (e.getKeyCode() == KeyEvent.VK_LEFT)
-            {
+            if (e.getKeyCode() == KeyEvent.VK_LEFT) {
                 System.out.println("l");
                 x--;
                 repaint();
             }
-            if(e.getKeyCode() == KeyEvent.VK_RIGHT)
-            {
+            if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
                 System.out.println("r");
                 x++;
                 repaint();
             }
-            if(e.getKeyCode() == KeyEvent.VK_UP)
-            {
+            if (e.getKeyCode() == KeyEvent.VK_UP) {
                 System.out.println("u");
                 y--;
                 repaint();
             }
-            if(e.getKeyCode() == KeyEvent.VK_DOWN)
-            {
+            if (e.getKeyCode() == KeyEvent.VK_DOWN) {
                 System.out.println("d");
                 y++;
                 repaint();
             }
         }
+
         @Override
         public void keyReleased(KeyEvent e) {
         }
@@ -49,49 +47,52 @@ public class Main extends Frame {
 
     public BufferedImage im;
 
-    public Main()
-    {
+    public Main() {
         try {
-            im = ImageIO.:/Users/malaread(new File ("Ckhovskiyam.28/IdeaProjects/Pi001A/src/sun.jpg"));
-        }
-        catch (IOException e) {
+            im = ImageIO.read(new File("H:/pngtree-cartoon-cute-little-sun-png-image_13901203.png"));
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
         setTitle("The Sun");
-        setSize(800,640);
+        setSize(800, 640);
         setVisible(true);
         addKeyListener(kl);
     }
-    public void paint(Graphics g)
-    {
+
+    public void paint(Graphics g) {
         super.paint(g);
         Graphics2D isa = (Graphics2D) g;
 
         g.setColor(Color.ORANGE);
         //((Graphics2D)g).setBackground(Color.YELLOW);
         g.fillOval(300, 250, 150, 150);
-        g.drawLine(460, 325, 560,325);
-        g.drawLine(375, 410, 375,500);
-        g.drawLine(290, 325, 190,325);
-        g.drawLine(375, 240, 375,140);
-        g.drawLine(430, 250, 490,200);
-        g.drawLine(330, 390, 270,440);
-        g.drawLine(430, 390, 490,440);
-        g.drawLine(330, 250, 270,200);
+        g.drawLine(460, 325, 560, 325);
+        g.drawLine(375, 410, 375, 500);
+        g.drawLine(290, 325, 190, 325);
+        g.drawLine(375, 240, 375, 140);
+        g.drawLine(430, 250, 490, 200);
+        g.drawLine(330, 390, 270, 440);
+        g.drawLine(430, 390, 490, 440);
+        g.drawLine(330, 250, 270, 200);
         for (int x = 0; x < 600; x++) {
 
-        g.setColor(Color.RED);
-        g.fillOval(x,y,50,50);
-        g.drawImage(im, 0, 0, this);
-        //for (long i = 0; i < 999999999; i++){}
-        //g.fillOval(600,200,50,50);
+            g.setColor(Color.RED);
+            g.fillOval(x, y, 50, 50);
+            g.drawImage(im, 0, 0, this);
+            //for (long i = 0; i < 999999999; i++){}
+            //g.fillOval(600,200,50,50);
+        }
     }
-    public static void main(String[] args)
-    {
-        new Main();
+
+    public static void main(String[] args) {
+        {
+            new Main();
+        }
     }
 }
+
+
 
 /*import java.awt.*;
 
