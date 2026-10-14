@@ -20,22 +20,21 @@ public class menu extends JFrame {
 
         @Override
         public void mousePressed(MouseEvent e) {
-            System.out.println(e.getPoint().x+ " "+ e.getPoint().y);
+            //System.out.println(e.getPoint().x+ " "+ e.getPoint().y);
 
-            if (e.getPoint().x>108 && e.getPoint().x<358 && e.getPoint().y>100 && e.getPoint().y<183)
+            if (e.getPoint().x>275 && e.getPoint().x<525 && e.getPoint().y>150 && e.getPoint().y<233)
             {
                 new test2();
 //                System.out.println("start!!!");
 //                System.exit(0);
             }
-            if (e.getPoint().x>108 && e.getPoint().x<209 && e.getPoint().y>300 && e.getPoint().y<401)
+            if (e.getPoint().x>275 && e.getPoint().x<376 && e.getPoint().y>280 && e.getPoint().y<381)
             {
-                new JFrame("Настройки");
-                setVisible(true);
-//                System.out.println("start!!!");
-//                System.exit(0);
+                JFrame settings = new JFrame("Настройки");
+                settings.setSize(300, 200);
+                settings.setVisible(true);
             }
-            if (e.getPoint().x>108 && e.getPoint().x<337 && e.getPoint().y>500 && e.getPoint().y<574)
+            if (e.getPoint().x>275 && e.getPoint().x<504 && e.getPoint().y>410 && e.getPoint().y<484)
             {
                 System.exit(0);
             }
@@ -62,7 +61,7 @@ public class menu extends JFrame {
     menu()
     {
         try {
-            bg = ImageIO.read(new File("src/fon.jpg"));
+            bg = ImageIO.read(new File("src/fon2.png"));
             button_start = ImageIO.read(new File("src/playbutton.png"));
             button_setting = ImageIO.read(new File("src/settings.png"));
             button_exit = ImageIO.read(new File("src/quitbutton.png"));
@@ -80,9 +79,9 @@ public class menu extends JFrame {
     {
         super.paint(g);
         g.drawImage(bg,0,0,this);
-        g.drawImage(button_start,108,100,this);
-        g.drawImage(button_setting,108,300,this);
-        g.drawImage(button_exit,108,500,this);
+        g.drawImage(button_start, 275, 150, this);   // Было 108, 100
+        g.drawImage(button_setting, 275, 280, this); // Было 108, 300
+        g.drawImage(button_exit, 275, 410, this);    // Было 108, 500
 
     }
     public static void main(String[] args)
