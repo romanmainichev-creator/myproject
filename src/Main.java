@@ -62,7 +62,8 @@ public class Main extends Frame {
 
     public void paint(Graphics g) {
         super.paint(g);
-        Graphics2D isa = (Graphics2D) g;
+        g.drawImage(im, 0, 0, this);
+        /*Graphics2D isa = (Graphics2D) g;
 
         g.setColor(Color.ORANGE);
         //((Graphics2D)g).setBackground(Color.YELLOW);
@@ -79,10 +80,12 @@ public class Main extends Frame {
 
             g.setColor(Color.RED);
             g.fillOval(x, y, 50, 50);
-            g.drawImage(im, 0, 0, this);
+
             //for (long i = 0; i < 999999999; i++){}
             //g.fillOval(600,200,50,50);
         }
+
+         */
     }
 
     public static void main(String[] args) {

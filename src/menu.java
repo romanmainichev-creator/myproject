@@ -24,7 +24,7 @@ public class menu extends JFrame {
 
             if (e.getPoint().x>275 && e.getPoint().x<525 && e.getPoint().y>150 && e.getPoint().y<233)
             {
-                new test2();
+                new gamemod();
 //                System.out.println("start!!!");
 //                System.exit(0);
             }
