@@ -53,9 +53,9 @@ public class gamemod2 extends JPanel implements MouseListener, MouseMotionListen
 
     float shakeAmount = 0f, shakeX = 0f, shakeY = 0f;
 
-    final ArrayList<Particle>     particles = new ArrayList<>();
-    final ArrayList<FloatingText> floats    = new ArrayList<>();
-    final ArrayList<Star>         stars     = new ArrayList<>();
+    final ArrayList<Particle>     particles = new ArrayList<>(); //это маленькие квадратики искры
+    final ArrayList<FloatingText> floats    = new ArrayList<>(); //всплывающий текст
+    final ArrayList<Star>         stars     = new ArrayList<>(); //звезды на заднем фоне
 
     final Random rnd = new Random();
     final Timer  timer;
