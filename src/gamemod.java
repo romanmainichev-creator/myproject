@@ -153,19 +153,26 @@ public class gamemod extends JFrame implements MouseListener, MouseMotionListene
     }
 
     void drawDrag(Graphics2D g2) {
-        int[][] s = pieces.get(dragging); // берем из списка
+        int[][] s = pieces.get(dragging);
         int gc = Math.round((float) (dragX - BOARD_X) / CELL);
         int gr = Math.round((float) (dragY - BOARD_Y) / CELL);
 
         if (canPlace(s, gr, gc)) {
-
+            Composite old = g2.getComposite();
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.45f));
             for (int r = 0; r < s.length; r++)
                 for (int c = 0; c < s[0].length; c++)
-                    if (s[r][c] == 1)
-                        g2.drawImage(img,
-                                BOARD_X + (gc + c) * CELL,
-                                BOARD_Y + (gr + r) * CELL,
-                                CELL, CELL, this);
+                    if (s[r][c] == 1) {
+                        int x = BOARD_X + (gc + c) * CELL;
+                        int y = BOARD_Y + (gr + r) * CELL;
+                        if (img != null) {
+                            g2.drawImage(img, x, y, CELL, CELL, this);
+                        } else {
+                            g2.setColor(new Color(120, 200, 255));
+                            g2.fillRect(x, y, CELL, CELL);
+                        }
+                    }
+            g2.setComposite(old);
         }
         drawPiece(g2, s, dragX, dragY);
     }
